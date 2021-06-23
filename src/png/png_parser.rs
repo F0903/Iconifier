@@ -1,73 +1,10 @@
+use super::{
+	chunk::{ChunkData, ChunkType},
+	png_meta::PngMetadata,
+	Result,
+};
 use std::convert::TryInto;
 use std::fs::read;
-
-pub type Result<T> = std::result::Result<T, &'static str>;
-
-enum ChunkType {
-	Header,
-	Palette,
-	Data,
-	DataEnd,
-}
-
-impl ChunkType {
-	pub fn parse(name: &str) -> Result<ChunkType> {
-		match name {
-			"IHDR" => Ok(ChunkType::Header),
-			"PLTE" => Ok(ChunkType::Palette),
-			"IDAT" => Ok(ChunkType::Data),
-			"IEND" => Ok(ChunkType::DataEnd),
-			_ => Err("Unknown chunk type."),
-		}
-	}
-}
-
-enum ChunkData {
-	Header(PngMetadata),
-	Data(Vec<u8>),
-}
-
-#[derive(Debug)]
-pub struct PngMetadata {
-	pub width: u32,
-	pub height: u32,
-	pub bit_depth: u8,
-	pub color_type: u8,
-	pub compression_method: u8,
-	pub filter_method: u8,
-	pub interlace_method: u8,
-}
-
-// For decoding implementation
-/* impl PngMetadata {
-	pub fn zero() -> Self {
-		PngMetadata {
-			width: 0,
-			height: 0,
-			bit_depth: 0,
-			color_type: 0,
-			compression_method: 0,
-			filter_method: 0,
-			interlace_method: 0,
-		}
-	}
-} */
-
-#[derive(Debug)]
-pub struct EncodedPng {
-	pub info: PngMetadata,
-	pub png_data: Vec<u8>,
-}
-
-// For decoding implementation
-/* impl EncodedPng {
-	pub fn new() -> Self {
-		EncodedPng {
-			info: PngMetadata::zero(),
-			png_data: Vec::new(),
-		}
-	}
-} */
 
 pub struct PngParser {}
 

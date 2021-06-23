@@ -1,4 +1,4 @@
-use crate::png_parser::{PngMetadata, Result};
+use crate::png::{png_meta::PngMetadata, Result};
 use std::path::PathBuf;
 
 pub fn write_ico(
