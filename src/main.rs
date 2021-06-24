@@ -9,8 +9,7 @@ fn main() -> png::Result<()> {
 	let parser = png::PngParser::new();
 	let png = parser.parse_header(image_str)?;
 	ico_writer::write_ico(
-		"./",
-		image.file_name().unwrap().to_str().unwrap(),
+		format!("./{}", image.file_name().unwrap().to_str().unwrap()),
 		png,
 		image_str,
 	)?;

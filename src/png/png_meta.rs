@@ -1,7 +1,7 @@
 #[derive(Debug)]
 pub struct PngMetadata {
-	pub width: u32,
-	pub height: u32,
+	pub x: u32,
+	pub y: u32,
 	pub bit_depth: u8,
 	pub color_type: u8,
 	pub compression_method: u8,

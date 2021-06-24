@@ -1,6 +1,6 @@
 [package]
-name = "png_to_ico"
-version = "0.1.0"
+name = "iconifier"
+version = "0.2.0"
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

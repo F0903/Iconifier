@@ -19,12 +19,12 @@ impl PngParser {
 	}
 
 	fn parse_header_chunk(header_data: &[u8]) -> Result<ChunkData> {
-		let width = u32::from_be_bytes(
+		let x = u32::from_be_bytes(
 			header_data[0..4]
 				.try_into()
 				.map_err(|_| "Could not convert header data to array.")?,
 		);
-		let height = u32::from_be_bytes(
+		let y = u32::from_be_bytes(
 			header_data[4..8]
 				.try_into()
 				.map_err(|_| "Could not convert header data to array.")?,
@@ -55,8 +55,8 @@ impl PngParser {
 				.map_err(|_| "Could not convert header data to array.")?,
 		);
 		Ok(ChunkData::Header(PngMetadata {
-			width,
-			height,
+			x,
+			y,
 			bit_depth,
 			color_type,
 			compression_method,
