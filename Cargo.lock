@@ -3,5 +3,13 @@
 version = 3
 
 [[package]]
+name = "ico-rs"
+version = "0.1.0"
+source = "git+https://github.com/F0903/ico-rs.git#15dd9f98816afe84a285cdf3b5e9486a4b4c100e"
+
+[[package]]
 name = "iconifier"
 version = "0.2.0"
+dependencies = [
+ "ico-rs",
+]
