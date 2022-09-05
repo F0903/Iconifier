@@ -1,7 +1,6 @@
 # Iconifier
 
-A blazingly fast, small, and convenient program for converting .png images to .ico icons.
-No more sketchy conversion sites or complex conversion suites, just plain and simple.
+A blazingly fast, small, and convenient program for converting .png images to .ico icons. 
 
 ![usage gif](https://i.imgur.com/14BQekG.gif)
 
