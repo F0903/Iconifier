@@ -9,3 +9,5 @@ Usage is as simple as can be, simply drag an image onto the program and viola! T
 Be aware that the program only supports images with a max size of 256x256. This is a limitation of Windows, which isn't something I can do anything about.
 
 Binaries can be found in the latest build action for convenience :)
+
+For library usage, use the custom libary made for it called [ico-rs](https://github.com/F0903/ico-rs)
